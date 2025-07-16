@@ -1,4 +1,4 @@
-# Survey Form App (Dynamic Q&A Form)
+# Survey Flow App (Dynamic Q&A Form)
 
 This is a dynamic question-and-answer based survey Android application built using **MVVM**, **Retrofit**, **Room**, and **Firebase**. The form is generated from a remote JSON schema and supports various input types like text, numbers, multiple-choice, dropdowns, checkboxes, and image capture.
 
