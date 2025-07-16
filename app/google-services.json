@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "927977171366",
+    "project_id": "form-assessment-5c084",
+    "storage_bucket": "form-assessment-5c084.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927977171366:android:dd080bedd19fdc73744767",
+        "android_client_info": {
+          "package_name": "com.example.form_assessment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBif06Xhxa5XyRE2kIuu0fEdmARRpzrtwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
