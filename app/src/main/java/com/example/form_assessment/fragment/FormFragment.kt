@@ -27,7 +27,6 @@ import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.children
 import com.example.form_assessment.databinding.FragmentFormBinding
 import com.example.form_assessment.firebase.FirebaseHelper
@@ -100,6 +99,18 @@ class FormFragment : Fragment() {
                     input.textSize = 18f
                     binding.optionsContainer.addView(input)
                     binding.btnNext.setOnClickListener {
+
+                        val text = input.text.toString()
+                        val regex = question.validations?.regex
+
+                        if (!regex.isNullOrEmpty()) {
+                            val pattern = Regex(regex)
+                            if (!pattern.matches(text)) {
+                                Toast.makeText(requireContext(), "Invalid input format", Toast.LENGTH_SHORT).show()
+                                return@setOnClickListener
+                            }
+                        }
+
                         viewModel.answerCurrent(question.id, input.text.toString())
                         question.referTo?.id?.let { checkAndSave(it) }
                     }
@@ -111,6 +122,18 @@ class FormFragment : Fragment() {
                     input.textSize = 18f
                     binding.optionsContainer.addView(input)
                     binding.btnNext.setOnClickListener {
+
+                        val text = input.text.toString()
+                        val regex = question.validations?.regex
+
+                        if (!regex.isNullOrEmpty()) {
+                            val pattern = Regex(regex)
+                            if (!pattern.matches(text)) {
+                                Toast.makeText(requireContext(), "Invalid input format", Toast.LENGTH_SHORT).show()
+                                return@setOnClickListener
+                            }
+                        }
+
                         viewModel.answerCurrent(question.id, input.text.toString())
                         question.referTo?.id?.let { checkAndSave(it) }
                     }
