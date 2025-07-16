@@ -67,15 +67,15 @@ class FormFragment : Fragment() {
         observeConnectivity()
 
         viewModel.currentQuestion.observe(viewLifecycleOwner) { question ->
-            binding.tvQuestion.text = question.question.slug
+            binding.tvQuestion.text = question?.question?.slug
             Log.d("answer", "onViewCreated: "+viewModel.getAnswerSubmissions())
             binding.optionsContainer.removeAllViews()
 
-            binding.btnSkip.visibility = if (question.skip?.id != "-1") View.VISIBLE else View.GONE
+            binding.btnSkip.visibility = if (question?.skip?.id != "-1") View.VISIBLE else View.GONE
 
-            binding.btnNext.text = if(question.referTo?.id == "submit") "Submit" else "Next"
+            binding.btnNext.text = if(question?.referTo?.id == "submit") "Submit" else "Next"
 
-            when (question.type) {
+            when (question?.type) {
                 "multipleChoice" -> {
                     question.options?.forEach { opt ->
                         val radio = RadioButton(requireContext())
@@ -237,7 +237,7 @@ class FormFragment : Fragment() {
             }
 
             binding.btnSkip.setOnClickListener {
-                question.skip?.id?.let { viewModel.getNextQuestion(it) }
+                question?.skip?.id?.let { viewModel.getNextQuestion(it) }
             }
         }
     }

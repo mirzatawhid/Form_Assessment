@@ -15,8 +15,8 @@ class FormViewModel(application: Application) : AndroidViewModel(application) {
     private val _questions = MutableLiveData<List<QuestionItem>>()
     val questions: LiveData<List<QuestionItem>> get() = _questions
 
-    private val _currentQuestion = MutableLiveData<QuestionItem>()
-    val currentQuestion: LiveData<QuestionItem> get() = _currentQuestion
+    private val _currentQuestion = MutableLiveData<QuestionItem?>()
+    val currentQuestion: LiveData<QuestionItem?> = _currentQuestion
 
     private val answers = mutableMapOf<String, String>()
 
